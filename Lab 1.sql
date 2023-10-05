@@ -45,3 +45,9 @@ Select Std_ID,Name,Project_marks from Lab_grades;
 Select Std_ID,Name,Project_marks+Days_Present/12*5 as Total_marks from Lab_grades;
 
 select distinct major from Lab_grades;
+
+select * from Lab_grades order by Name desc, Submission_date asc;
+
+select name, project_marks from Lab_grades where project_marks between 17 and 19;
+
+select name, project_marks from Lab_grades where project_marks in (17,19);
