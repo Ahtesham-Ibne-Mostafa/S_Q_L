@@ -34,4 +34,13 @@ INSERT INTO Lab_grades values
 select*from Lab_grades;
 
 Alter table Lab_grades add Project_title char(10);
+Alter table Lab_grades modify column Project_title varchar(50);
+Alter table Lab_grades drop column Project_title;
+
+Update Lab_grades set Major = 'CSE' Where name='Arafat';
+Update Lab_grades set Name = 'Naheed',Project_marks =16 where Std_ID='s004';
+
+Select Std_ID,Name,Project_marks from Lab_grades;
+
+Select Std_ID,Name,Project_marks+Days_Present/12*5 as Total_marks from Lab_grades;
 
