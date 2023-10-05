@@ -51,3 +51,4 @@ select * from Lab_grades order by Name desc, Submission_date asc;
 select name, project_marks from Lab_grades where project_marks between 17 and 19;
 
 select name, project_marks from Lab_grades where project_marks in (17,19);
+
