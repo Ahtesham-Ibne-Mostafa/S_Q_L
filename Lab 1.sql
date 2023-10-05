@@ -44,3 +44,4 @@ Select Std_ID,Name,Project_marks from Lab_grades;
 
 Select Std_ID,Name,Project_marks+Days_Present/12*5 as Total_marks from Lab_grades;
 
+select distinct major from Lab_grades;
