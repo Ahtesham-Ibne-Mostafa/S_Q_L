@@ -28,8 +28,28 @@ INSERT INTO developers values
 
 select*from developers;
 
-ALTER TABLE developers
+ALTER TABLE developers                          -- Changing the column name
 CHANGE COLUMN influence_count followers int;
 
-UPDATE developers
+UPDATE developers                               -- changing all the values of a column
 SET followers = followers + 10;
+
+Alter table developers add Efficiency int;
+Alter table developers drop Efficiency ;
+
+SELECT name, ((followers * 100 / 1000000) * (multiplier * 100 / 20)) AS Efficiency FROM developers;        
+
+SELECT name, email FROM developers ORDER BY followers DESC LIMIT 5;      -- Show the name and email of the developers who have the 5 highest numbers of followers. 
+
+SELECT name FROM developers WHERE followers < 700000
+  AND multiplier = (select MAX(multiplier) from developers and WHERE followers < 700000) ;
+  
+  
+
+SELECT name
+FROM developers
+WHERE multipliers = (
+    SELECT MAX(multipliers)
+    FROM developers
+    WHERE followers < 700000
+);
