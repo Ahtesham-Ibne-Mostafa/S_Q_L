@@ -39,17 +39,6 @@ Alter table developers drop Efficiency ;
 
 SELECT name, ((followers * 100 / 1000000) * (multiplier * 100 / 20)) AS Efficiency FROM developers;        
 
-SELECT name, email FROM developers ORDER BY followers DESC LIMIT 5;      -- Show the name and email of the developers who have the 5 highest numbers of followers. 
+SELECT Upper(name) FROM developers ORDER BY Joining_date DESC;      -- Show the name of the developers . 
 
-SELECT name FROM developers WHERE followers < 700000
-  AND multiplier = (select MAX(multiplier) from developers and WHERE followers < 700000) ;
-  
-  
-
-SELECT name
-FROM developers
-WHERE multipliers = (
-    SELECT MAX(multipliers)
-    FROM developers
-    WHERE followers < 700000
-);
+SELECT member_id, name, email, followers FROM developers WHERE email LIKE '%.com' OR email LIKE '%.net';                                  --Retrieve the member_ id, name, email and followers of the developers who have either ".com" or ".net" in their email address. 
